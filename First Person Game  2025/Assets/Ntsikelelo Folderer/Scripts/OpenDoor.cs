@@ -19,7 +19,6 @@ public class OpenDoor : MonoBehaviour
             if(transform.position == targetPosition)
             {
                 isOpening = false;
-                Debug.Log("Door is Opening");
             }
         }
     }

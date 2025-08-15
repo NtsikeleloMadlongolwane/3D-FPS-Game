@@ -16,7 +16,6 @@ public class DoorTrigger : MonoBehaviour
             if (openDoor != null)
             {
                 openDoor.OpenTheDoor();
-                Debug.Log("Door triggered");
             }
         }
     }
