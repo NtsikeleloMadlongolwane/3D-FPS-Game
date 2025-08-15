@@ -6,11 +6,38 @@ public class FPController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
+    public float jumpHeight = 1.5f;
 
     [Header("Look Settings")]
     public Transform cameraTransform;
     public float lookSensitivity = 2f;
     public float verticalLookLimit = 90f;
+
+    [Header("Shooting")]
+    public GameObject bulletPrefab;
+    public Transform gunPoint;
+    public float bulletSpeed = 1000f;
+
+    [Header("Crouch Settings")]
+    public float crouchHeight = 1f;
+    public float standHeight = 2f;
+    public float crouchSpeed = 2.5f;
+    private float originalMoveSpeed;
+
+    [Header("PickUp Settings")]
+    public float pickupRange = 3f;
+    public Transform holdPoint;
+    private PickUpObject heldObject;
+
+    [Header("Throwing Settings")]
+    public GameObject savedObject;
+    public float throwForce = 10f;
+    public float throwUpwardBoost = 1f;
+
+    [Header("Swich Gun Settings")]
+    public bool canSwich = false;
+    public Vector3 savedPosition;
+    public Transform playerLocation;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -23,14 +50,20 @@ public class FPController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        originalMoveSpeed = moveSpeed;
     }
 
     private void Update()
     {
         HandleMovement();
         HandleLook();
+
+        if(heldObject != null)
+        {
+            heldObject.MoveToHoldPoint(holdPoint.position);
+        }
     }
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
@@ -38,6 +71,14 @@ public class FPController : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         lookInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
     }
 
     public void HandleMovement()
@@ -63,6 +104,136 @@ public class FPController : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Shoot();
+        }
+    }
+    private void Shoot()
+    {
+        if(bulletPrefab != null && gunPoint != null)
+        {
+            if (gunPoint == null) return;
+
+            GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+
+            if(rb != null)
+            {
+                rb.AddForce(gunPoint.forward * bulletSpeed);
+            }
+           
+            Destroy(bullet, 3f);
+        }
+
+        if (canSwich)
+        {
+            TogoClap();
+            Debug.Log("Swiched");
+        }
+    }
+
+    public void OnCrouch(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            controller.height = crouchHeight;
+            moveSpeed = crouchSpeed;
+        }
+        else if (context.canceled)
+        {
+            controller.height = standHeight;
+            moveSpeed = originalMoveSpeed;
+        }
+    }
+
+    public void OnPickUp(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        if(heldObject == null)
+        {
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            if(Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+            {
+                PickUpObject pickUp = hit.collider.GetComponent<PickUpObject>();
+                if (pickUp != null)
+                {
+                    pickUp.PickUp(holdPoint);
+                    heldObject = pickUp;
+
+                    if (hit.collider.CompareTag("Gun") && hit.collider.transform.name != "Teleport Gun")
+                    {
+                        Transform childTransform = hit.collider.transform.GetChild(0);
+                        gunPoint = childTransform;
+                    }
+                    if(hit.collider.transform.name == "Teleport Gun")
+                    {
+                        canSwich = true;
+                        Debug.Log("Teleport Gun Equipped");
+                    }
+
+                }
+            }
+        }
+
+        else
+        {
+            heldObject.Drop();
+            heldObject = null;
+
+            gunPoint = null;
+            canSwich = false;
+        }
+    }
+
+    public void OnThrow(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        if (heldObject == null) return;
+
+        Vector3 dir = cameraTransform.forward;
+        Vector3 impuse = dir * throwForce + Vector3.up * throwUpwardBoost;
+
+        // heldObject.Throw(impulse);
+        heldObject = null;
+    }
+
+
+    public void SetGunEffect(InputAction.CallbackContext context)
+    {
+        if (canSwich)
+        {
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+            {
+                if (hit.collider.CompareTag("Switch"))
+                {
+                    savedObject = hit.collider.gameObject;
+                    savedPosition = hit.transform.position;
+                    Debug.Log("Switch Location is now: " + savedPosition);
+                }
+            }
+        }
+    }
+
+    public void TogoClap()
+    {
+        if (savedPosition == null) return;
+
+        Vector3 tempLocationStore = this. transform.position;
+
+        controller.enabled = false;
+        this.transform.position = savedObject.transform.position;
+        controller.enabled = true;
+
+        savedObject.transform.position = tempLocationStore;       
+    }
+
 }
 
 
