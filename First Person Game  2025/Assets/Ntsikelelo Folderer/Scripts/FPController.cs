@@ -30,14 +30,22 @@ public class FPController : MonoBehaviour
     private PickUpObject heldObject;
 
     [Header("Throwing Settings")]
-    public GameObject savedObject;
     public float throwForce = 10f;
     public float throwUpwardBoost = 1f;
 
     [Header("Swich Gun Settings")]
     public bool canSwich = false;
+    public GameObject markedObject;
+    public GameObject oldObject;
     public Vector3 savedPosition;
     public Transform playerLocation;
+
+    [Header("Duble Jump")]
+    public int maxJumpCount = 2;
+    public int jumpCount = 0;
+
+    [Header("Respawn")]
+    public Vector3 spawnLocation;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -62,6 +70,11 @@ public class FPController : MonoBehaviour
         {
             heldObject.MoveToHoldPoint(holdPoint.position);
         }
+
+        if(controller.isGrounded && velocity.y <= 0)
+        {
+            jumpCount = 0;
+        }
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -75,9 +88,10 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && controller.isGrounded)
+        if (context.performed && jumpCount < maxJumpCount)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            jumpCount++;
         }
     }
 
@@ -121,9 +135,18 @@ public class FPController : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
+            // calculate dorection
+
+            Vector3 forceDirectsion = cameraTransform.transform.forward;
+            RaycastHit hit;
+            if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 500f))
+            {
+                forceDirectsion = (hit.point - gunPoint.position).normalized;
+            }
+            // direction calculate
             if(rb != null)
             {
-                rb.AddForce(gunPoint.forward * bulletSpeed);
+                rb.AddForce(forceDirectsion * bulletSpeed);
             }
            
             Destroy(bullet, 3f);
@@ -209,18 +232,26 @@ public class FPController : MonoBehaviour
         {
             Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+            if (Physics.Raycast(ray, out RaycastHit hit, 500f))
             {
                 if (hit.collider.CompareTag("Switch"))
                 {
-                    savedObject = hit.collider.gameObject;
+                    if(markedObject!= null)
+                    {
+                        Marking ummark = markedObject.GetComponent<Marking>();
+                        ummark.Unmarked();
+                    }
+
+                    markedObject = hit.collider.gameObject;
                     savedPosition = hit.transform.position;
                     Debug.Log("Switch Location is now: " + savedPosition);
+
+                    Marking mark = hit.collider.GetComponent<Marking>();
+                    mark.Marked();
                 }
             }
         }
     }
-
     public void TogoClap()
     {
         if (savedPosition == null) return;
@@ -228,12 +259,21 @@ public class FPController : MonoBehaviour
         Vector3 tempLocationStore = this. transform.position;
 
         controller.enabled = false;
-        this.transform.position = savedObject.transform.position;
+        this.transform.position = markedObject.transform.position;
         controller.enabled = true;
-
-        savedObject.transform.position = tempLocationStore;       
+        markedObject.transform.position = tempLocationStore;       
+    }
+    public void SpringBoard(float springPower)
+    {
+            velocity.y = Mathf.Sqrt(springPower * -2f * gravity);
     }
 
+    public void Respawn()
+    {
+        controller.enabled = false;
+        this.transform.position = spawnLocation;
+        controller.enabled = true;
+    }
 }
 
 
