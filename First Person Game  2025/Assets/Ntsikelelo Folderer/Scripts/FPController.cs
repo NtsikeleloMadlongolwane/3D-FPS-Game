@@ -27,6 +27,7 @@ public class FPController : MonoBehaviour
     [Header("PickUp Settings")]
     public float pickupRange = 3f;
     public Transform holdPoint;
+    public Transform holdPointLeft;
     private PickUpObject heldObject;
 
     [Header("Throwing Settings")]
@@ -41,6 +42,7 @@ public class FPController : MonoBehaviour
     public Transform playerLocation;
 
     [Header("Duble Jump")]
+    public bool canDoubleJump = false;
     public int maxJumpCount = 2;
     public int jumpCount = 0;
 
@@ -88,11 +90,11 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && jumpCount < maxJumpCount)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            jumpCount++;
-        }
+            if (context.performed && jumpCount < maxJumpCount)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                jumpCount++;
+            }
     }
 
     public void HandleMovement()
@@ -137,16 +139,16 @@ public class FPController : MonoBehaviour
 
             // calculate dorection
 
-            Vector3 forceDirectsion = cameraTransform.transform.forward;
+            Vector3 forceDirection = cameraTransform.transform.forward;
             RaycastHit hit;
             if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 500f))
             {
-                forceDirectsion = (hit.point - gunPoint.position).normalized;
+                forceDirection = (hit.point - gunPoint.position).normalized;
             }
             // direction calculate
             if(rb != null)
             {
-                rb.AddForce(forceDirectsion * bulletSpeed);
+                rb.AddForce(forceDirection * bulletSpeed);
             }
            
             Destroy(bullet, 3f);
@@ -158,7 +160,17 @@ public class FPController : MonoBehaviour
             Debug.Log("Swiched");
         }
     }
+    public void OnThrow(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        if (heldObject == null) return;
 
+        Vector3 dir = cameraTransform.forward;
+        Vector3 impuse = dir * throwForce + Vector3.up * throwUpwardBoost;
+
+        // heldObject.Throw(impulse);
+        heldObject = null;
+    }
     public void OnCrouch(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -184,21 +196,20 @@ public class FPController : MonoBehaviour
             {
                 PickUpObject pickUp = hit.collider.GetComponent<PickUpObject>();
                 if (pickUp != null)
-                {
-                    pickUp.PickUp(holdPoint);
-                    heldObject = pickUp;
+                {        
+                        pickUp.PickUp(holdPoint);
+                        heldObject = pickUp;
 
-                    if (hit.collider.CompareTag("Gun") && hit.collider.transform.name != "Teleport Gun")
-                    {
-                        Transform childTransform = hit.collider.transform.GetChild(0);
-                        gunPoint = childTransform;
-                    }
-                    if(hit.collider.transform.name == "Teleport Gun")
-                    {
-                        canSwich = true;
-                        Debug.Log("Teleport Gun Equipped");
-                    }
-
+                        if (hit.collider.CompareTag("Gun") && hit.collider.transform.name != "Teleport Gun")
+                        {
+                            Transform childTransform = hit.collider.transform.GetChild(0);
+                            gunPoint = childTransform;
+                        }
+                        if (hit.collider.transform.name == "Teleport Gun")
+                        {
+                            canSwich = true;
+                            Debug.Log("Teleport Gun Equipped");
+                        }                
                 }
             }
         }
@@ -212,19 +223,6 @@ public class FPController : MonoBehaviour
             canSwich = false;
         }
     }
-
-    public void OnThrow(InputAction.CallbackContext context)
-    {
-        if (!context.performed) return;
-        if (heldObject == null) return;
-
-        Vector3 dir = cameraTransform.forward;
-        Vector3 impuse = dir * throwForce + Vector3.up * throwUpwardBoost;
-
-        // heldObject.Throw(impulse);
-        heldObject = null;
-    }
-
 
     public void SetGunEffect(InputAction.CallbackContext context)
     {
@@ -265,9 +263,8 @@ public class FPController : MonoBehaviour
     }
     public void SpringBoard(float springPower)
     {
-            velocity.y = Mathf.Sqrt(springPower * -2f * gravity);
+        velocity.y = Mathf.Sqrt(springPower * -2f * gravity);
     }
-
     public void Respawn()
     {
         controller.enabled = false;
