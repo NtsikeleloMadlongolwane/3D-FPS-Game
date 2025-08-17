@@ -27,7 +27,6 @@ public class FPController : MonoBehaviour
     [Header("PickUp Settings")]
     public float pickupRange = 3f;
     public Transform holdPoint;
-    public Transform holdPointLeft;
     private PickUpObject heldObject;
 
     [Header("Throwing Settings")]
@@ -48,6 +47,9 @@ public class FPController : MonoBehaviour
 
     [Header("Respawn")]
     public Vector3 spawnLocation;
+
+    [Header("Quit and Restart")]
+    public SceneManageemment sM;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -130,7 +132,7 @@ public class FPController : MonoBehaviour
     }
     private void Shoot()
     {
-        if(bulletPrefab != null && gunPoint != null)
+        if(bulletPrefab != null && gunPoint != null && gunPoint.transform.name == "ShootPoint")
         {
             if (gunPoint == null) return;
 
@@ -256,10 +258,13 @@ public class FPController : MonoBehaviour
 
         Vector3 tempLocationStore = this. transform.position;
 
-        controller.enabled = false;
-        this.transform.position = markedObject.transform.position;
-        controller.enabled = true;
-        markedObject.transform.position = tempLocationStore;       
+        if(markedObject != null)
+        {
+            controller.enabled = false;
+            this.transform.position = markedObject.transform.position;
+            controller.enabled = true;
+            markedObject.transform.position = tempLocationStore;
+        }        
     }
     public void SpringBoard(float springPower)
     {
@@ -270,6 +275,15 @@ public class FPController : MonoBehaviour
         controller.enabled = false;
         this.transform.position = spawnLocation;
         controller.enabled = true;
+    }
+
+    public void ResetLevel(InputAction.CallbackContext context)
+    {
+        sM.Restart();
+    }
+    public void QuitLevel(InputAction.CallbackContext context)
+    {
+        sM.QuitGame();
     }
 }
 
