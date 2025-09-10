@@ -154,12 +154,25 @@ public class FPController : MonoBehaviour
             }
            
             Destroy(bullet, 3f);
-        }
+        } // shooting
 
         if (canSwich)
         {
             TogoClap();
             Debug.Log("Swiched");
+        } // todo gun
+
+        if(heldObject != null && heldObject.transform.name == "ThrowingBall")
+        {
+            GameObject throwable = heldObject.gameObject;
+            Rigidbody trb = throwable.GetComponent<Rigidbody>();
+
+            heldObject.Drop();
+            heldObject = null;
+
+            Vector3 throwDirection = holdPoint.forward + holdPoint.up * throwUpwardBoost;
+            trb.AddForce(throwDirection.normalized * throwForce, ForceMode.Impulse);
+            trb = null;
         }
     }
     public void OnThrow(InputAction.CallbackContext context)
