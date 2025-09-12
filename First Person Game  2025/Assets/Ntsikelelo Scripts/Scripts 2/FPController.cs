@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class FPController : MonoBehaviour
 {
@@ -45,11 +46,24 @@ public class FPController : MonoBehaviour
     public int maxJumpCount = 2;
     public int jumpCount = 0;
 
+    [Header("Dash Setting")]
+    public float dashSpeed = 20f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 2f;
+    public TextMeshProUGUI cooldownText;
+
+    private bool isDashing = false;
+    private float dashTime;
+    private float cooldownTimer = 0f;
+
+
+
     [Header("Respawn")]
     public Vector3 spawnLocation;
 
     [Header("Quit and Restart")]
     public SceneManageemment sM;
+
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -74,11 +88,29 @@ public class FPController : MonoBehaviour
         {
             heldObject.MoveToHoldPoint(holdPoint.position);
         }
-
+//DOUBLE JUMP // Might remove later
         if(controller.isGrounded && velocity.y <= 0)
         {
             jumpCount = 0;
         }
+
+// DASHING //
+        if (isDashing)
+        {
+            Dash();
+        }
+        // dash cooldown
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+            cooldownText.text = $"Dash: {cooldownTimer:F1}s"; 
+        }
+        else
+        {
+            cooldownText.text = "Dash: Ready";
+        }
+
+
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -297,6 +329,29 @@ public class FPController : MonoBehaviour
         controller.enabled = false;
         this.transform.position = spawnLocation;
         controller.enabled = true;
+    }
+
+    public void StartDash(InputAction.CallbackContext context)
+    {
+        if(!isDashing && cooldownTimer <= 0)
+        {
+            isDashing = true;
+            dashTime = dashDuration;
+            cooldownTimer = dashCooldown;
+        }
+    }
+    public void Dash()
+    {
+        if (dashTime > 0)
+        {
+            Vector3 dashDirection = transform.forward;
+            controller.Move(dashDirection * dashSpeed * Time.deltaTime);
+            dashTime -= Time.deltaTime;
+        }
+        else
+        {
+            isDashing = false;
+        }
     }
 
     public void ResetLevel(InputAction.CallbackContext context)
