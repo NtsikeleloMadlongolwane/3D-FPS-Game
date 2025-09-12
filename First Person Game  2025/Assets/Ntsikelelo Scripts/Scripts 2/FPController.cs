@@ -41,7 +41,7 @@ public class FPController : MonoBehaviour
     public Vector3 savedPosition;
     public Transform playerLocation;
 
-    [Header("Duble Jump")]
+    [Header("Double Jump")]
     public bool canDoubleJump = false;
     public int maxJumpCount = 2;
     public int jumpCount = 0;
@@ -191,7 +191,6 @@ public class FPController : MonoBehaviour
         if (canSwich)
         {
             TogoClap();
-            Debug.Log("Swiched");
         } // todo gun
 
         if(heldObject != null && heldObject.transform.name == "ThrowingBall")
