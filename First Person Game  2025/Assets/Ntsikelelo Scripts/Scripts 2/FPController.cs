@@ -171,8 +171,17 @@ public class FPController : MonoBehaviour
             heldObject = null;
 
             Vector3 throwDirection = holdPoint.forward + holdPoint.up * throwUpwardBoost;
+
+            RaycastHit hit;
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 500f))
+            {
+                throwDirection = (hit.point - holdPoint.position).normalized;
+            }
+
             trb.AddForce(throwDirection.normalized * throwForce, ForceMode.Impulse);
             trb = null;
+
+           
         }
     }
     public void OnThrow(InputAction.CallbackContext context)
