@@ -10,4 +10,14 @@ public class HazardRespawn : MonoBehaviour
             fP.Respawn();
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            FPController fP = collision.gameObject.GetComponent<FPController>();
+            fP.Respawn();
+            Destroy(this.gameObject);
+        }
+    }
 }
