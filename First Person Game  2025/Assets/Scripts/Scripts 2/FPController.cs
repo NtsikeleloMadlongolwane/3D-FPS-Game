@@ -321,6 +321,7 @@ public class FPController : MonoBehaviour
     }
     public void SpringBoard(float springPower)
     {
+
         velocity.y = Mathf.Sqrt(springPower * -2f * gravity);
     }
     public void Respawn()
