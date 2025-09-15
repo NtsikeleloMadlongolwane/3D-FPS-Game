@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7694877035657276279}
   - component: {fileID: 2025677029377620403}
   - component: {fileID: 3664087834671350599}
+  - component: {fileID: 3829676099999825659}
   m_Layer: 0
   m_Name: SceneControler
   m_TagString: Untagged
@@ -63,3 +64,16 @@ MonoBehaviour:
   centerTextCounter: {fileID: 0}
   centerTextInfo: {fileID: 0}
   fPController: {fileID: 0}
+  isCounting: 0
+--- !u!114 &3829676099999825659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651406091454322967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4e7fe6628452e449458d073b335ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
