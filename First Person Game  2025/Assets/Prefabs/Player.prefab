@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91e3ff7eb62a4f49904dbb85d629cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   moveSpeed: 7
   gravity: -15
   jumpHeight: 1.5
@@ -249,7 +250,7 @@ MonoBehaviour:
   crouchSpeed: 2.5
   pickupRange: 3
   holdPoint: {fileID: 8995883112386947757}
-  throwForce: 30
+  throwForce: 50
   throwUpwardBoost: 0
   canSwich: 0
   markedObject: {fileID: 0}

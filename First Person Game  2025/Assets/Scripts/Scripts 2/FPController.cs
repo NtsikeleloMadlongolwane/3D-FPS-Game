@@ -5,6 +5,7 @@ using TMPro;
 public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]
+    public bool canMove = true;
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.5f;
@@ -55,8 +56,6 @@ public class FPController : MonoBehaviour
     private bool isDashing = false;
     private float dashTime;
     private float cooldownTimer = 0f;
-
-
 
     [Header("Respawn")]
     public Vector3 spawnLocation;
@@ -114,16 +113,21 @@ public class FPController : MonoBehaviour
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
+        if (!canMove) return;
         moveInput = context.ReadValue<Vector2>();
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
+        if (!canMove) return;
+
         lookInput = context.ReadValue<Vector2>();
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (!canMove) return;
+
             if (context.performed && jumpCount < maxJumpCount)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -133,6 +137,8 @@ public class FPController : MonoBehaviour
 
     public void HandleMovement()
     {
+        if (!canMove) return;
+
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
@@ -145,6 +151,8 @@ public class FPController : MonoBehaviour
 
     public void HandleLook()
     {
+        if (!canMove) return;
+
         float mouseX = lookInput.x * lookSensitivity;
         float mouseY = lookInput.y * lookSensitivity;
 
@@ -157,6 +165,7 @@ public class FPController : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
+
         if (context.performed)
         {
             Shoot();
@@ -164,7 +173,8 @@ public class FPController : MonoBehaviour
     }
     private void Shoot()
     {
-        if(bulletPrefab != null && gunPoint != null && gunPoint.transform.name == "ShootPoint")
+
+        if (bulletPrefab != null && gunPoint != null && gunPoint.transform.name == "ShootPoint")
         {
             if (gunPoint == null) return;
 
@@ -193,7 +203,7 @@ public class FPController : MonoBehaviour
             TogoClap();
         } // todo gun
 
-        if(heldObject != null && heldObject.transform.name == "ThrowingBall")
+        if(heldObject != null && heldObject.CompareTag("Switch"))
         {
             GameObject throwable = heldObject.gameObject;
             Rigidbody trb = throwable.GetComponent<Rigidbody>();
@@ -212,11 +222,12 @@ public class FPController : MonoBehaviour
             trb.AddForce(throwDirection.normalized * throwForce, ForceMode.Impulse);
             trb = null;
 
-           
+            Debug.Log("Threw Ball");
         }
     }
     public void OnThrow(InputAction.CallbackContext context)
     {
+
         if (!context.performed) return;
         if (heldObject == null) return;
 
@@ -228,6 +239,7 @@ public class FPController : MonoBehaviour
     }
     public void OnCrouch(InputAction.CallbackContext context)
     {
+
         if (context.performed)
         {
             controller.height = crouchHeight;
@@ -260,7 +272,7 @@ public class FPController : MonoBehaviour
                             Transform childTransform = hit.collider.transform.GetChild(0);
                             gunPoint = childTransform;
                         }
-                        if (hit.collider.transform.name == "Teleport Gun")
+                        if (hit.collider.CompareTag("TodoGun"))
                         {
                             canSwich = true;
                             Debug.Log("Teleport Gun Equipped");
@@ -321,7 +333,6 @@ public class FPController : MonoBehaviour
     }
     public void SpringBoard(float springPower)
     {
-
         velocity.y = Mathf.Sqrt(springPower * -2f * gravity);
     }
     public void Respawn()

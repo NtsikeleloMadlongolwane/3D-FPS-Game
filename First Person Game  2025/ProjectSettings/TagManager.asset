@@ -9,6 +9,7 @@ TagManager:
   - Switch
   - Bullet
   - Boulder
+  - TodoGun
   layers:
   - Default
   - TransparentFX
