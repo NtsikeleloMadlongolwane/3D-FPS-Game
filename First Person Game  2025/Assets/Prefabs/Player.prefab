@@ -79,9 +79,9 @@ Canvas:
   m_GameObject: {fileID: 1107442395337681982}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 2682802851185289540}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -89,7 +89,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
+  m_UpdateRectTransformForStandalone: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   crouchSpeed: 2.5
   pickupRange: 3
   holdPoint: {fileID: 8995883112386947757}
-  throwForce: 50
+  throwForce: 30
   throwUpwardBoost: 0
   canSwich: 0
   markedObject: {fileID: 0}
@@ -260,7 +260,7 @@ MonoBehaviour:
   maxJumpCount: 2
   jumpCount: 0
   dashSpeed: 30
-  dashDuration: 0.7
+  dashDuration: 0.3
   dashCooldown: 5
   cooldownText: {fileID: 6024278751228478583}
   spawnLocation: {x: 0, y: 0, z: 0}
@@ -622,7 +622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 113}
+  m_AnchoredPosition: {x: -835, y: 440}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2972488154651197640
@@ -680,8 +680,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.9
-  m_fontSizeBase: 16.9
+  m_fontSize: 54.68
+  m_fontSizeBase: 54.68
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -718,7 +718,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.8241577, w: 30.279587}
+  m_margin: {x: 0, y: 0, z: -534.5491, w: 30.279587}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
