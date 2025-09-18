@@ -8,8 +8,13 @@ public class TimerController : MonoBehaviour
     {
         if (timerScript.isCounting)
         {
+
             timerScript.StopTimer();
             Destroy(this.gameObject);
+
+            // reveal cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {
