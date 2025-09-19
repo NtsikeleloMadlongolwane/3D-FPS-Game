@@ -9,9 +9,9 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI centerTextInfo;
 
     public FPController fPController;
+    public bool isCounting = false;
 
     private float timer = 0f;
-    private bool isCounting = false;
 
     private void Update()
     {
@@ -25,18 +25,10 @@ public class Timer : MonoBehaviour
             timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, miliseconds);
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SartTimer();
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            StopTimer();
-        }
     }
 
 
-    public void SartTimer()
+    public void StartTimer()
     {
         timer = 0f;
         centerTextInfo.text = "";
