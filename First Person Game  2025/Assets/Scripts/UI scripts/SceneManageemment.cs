@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneManageemment : MonoBehaviour
 {
-    public void Restart()
+    public void Tutorial()
     {
         SceneManager.LoadScene("Tutorial Level");
         Debug.Log("Loaded Ntsikeleo Scene");

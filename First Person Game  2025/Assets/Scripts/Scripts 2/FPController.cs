@@ -73,8 +73,8 @@ public class FPController : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+       Cursor.lockState = CursorLockMode.Locked;
+       Cursor.visible = false;
         originalMoveSpeed = moveSpeed;
     }
 
@@ -319,6 +319,7 @@ public class FPController : MonoBehaviour
     }
     public void TogoClap()
     {
+        if (!canMove) return;
         if (savedPosition == null) return;
 
         Vector3 tempLocationStore = this. transform.position;
@@ -365,14 +366,6 @@ public class FPController : MonoBehaviour
         }
     }
 
-    public void ResetLevel(InputAction.CallbackContext context)
-    {
-        sM.Restart();
-    }
-    public void QuitLevel(InputAction.CallbackContext context)
-    {
-        sM.QuitGame();
-    }
 }
 
 
