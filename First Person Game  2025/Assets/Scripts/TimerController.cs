@@ -6,20 +6,23 @@ public class TimerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (timerScript.isCounting)
+        if (other.gameObject.CompareTag("Player"))
         {
+            if (timerScript.isCounting)
+            {
 
-            timerScript.StopTimer();
-            Destroy(this.gameObject);
+                timerScript.StopTimer();
+                Destroy(this.gameObject);
 
-            // reveal cursor
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            timerScript.StartTimer();
-            Destroy(this.gameObject);
-        }
+                // reveal cursor
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                timerScript.StartTimer();
+                Destroy(this.gameObject);
+            }
+        } 
     }
 }
