@@ -16,9 +16,19 @@ public class MainMenuRoutines : MonoBehaviour
     public TMP_Text tipsTMPro;
     public string[] tipsList;
 
+    [Header("Generating")]
+    public GameObject generatingPrompt;
+    public TMP_Text generatingText;
+    public float generatingTime = 2f; 
+
     [Header("Main Menu Screen")]
     public GameObject MainMenuScreen;
 
+    [Header("Button Press Screens")]
+    public GameObject selectLevel;
+    public GameObject controls;
+    public GameObject playerStats;
+    public GameObject quitScreen;
     private void Start()
     {
         GameScreenClick();
@@ -36,10 +46,10 @@ public class MainMenuRoutines : MonoBehaviour
         yield return new WaitForSeconds(startButtonTimer);
         enterGameButton.SetActive(true);
     }
-    System.Collections.IEnumerator LoadingScreen(string stage)
+    System.Collections.IEnumerator LoadingScreen(string sceneName)
     {
-        // set other screen inactive
-        gameNameScreen.SetActive(false);
+            // set other screen inactive
+            gameNameScreen.SetActive(false);
 
         // set screen active
         loadingscreen.SetActive(true);
@@ -50,15 +60,14 @@ public class MainMenuRoutines : MonoBehaviour
       
         yield return new WaitForSeconds(ScreenLength);
         loadingscreen.SetActive(false);
-        if(stage == "START")
+        if(sceneName == "MainMenu")
         {
             MainMenuClick();
         }
-        else if(stage == "STAGE_ONE")
+        else
         {
-            // load level one.
-        }
 
+        }
     }
 
     // button clicks
@@ -68,10 +77,59 @@ public class MainMenuRoutines : MonoBehaviour
     }
     public void EnterGameClick()
     {
-        StartCoroutine(LoadingScreen("START"));    
+        StartCoroutine(LoadingScreen("MainMenu"));    
     } 
     public void MainMenuClick()
     {
         MainMenuScreen.SetActive(true);
+    }
+
+    // main menu buttons
+    public void levelSelect()
+    {
+        selectLevel.SetActive(true);
+        // set off
+        controls.SetActive(false);
+        playerStats.SetActive(false);
+        quitScreen.SetActive(false);
+    }
+            public void Level_Tut()
+            {
+                StartCoroutine(Generating("Tutorial Level"));
+            }
+    public void ControlsMain()
+    {
+        controls.SetActive(true);
+        // set off
+        selectLevel.SetActive(false);
+        playerStats.SetActive(false);
+        quitScreen.SetActive(false);
+    }
+    public void PlayerStats()
+    {
+        playerStats.SetActive(true);
+        // set off
+        selectLevel.SetActive(false);
+        controls.SetActive(false);
+        quitScreen.SetActive(false);
+    }
+    public void QuitGamePrompt()
+    {
+        quitScreen.SetActive(true);
+        // set off
+        selectLevel.SetActive(false);
+        controls.SetActive(false);
+        playerStats.SetActive(false);
+    }
+
+    System.Collections.IEnumerator Generating(string levelName)
+    {
+        generatingPrompt.SetActive(true);
+        generatingText.text = "GENERATING...";
+        yield return new WaitForSeconds(generatingTime);
+        generatingText.text = "LEVEL READY";
+        yield return new WaitForSeconds(1F);
+
+        SceneManager.LoadScene(levelName);
     }
 }
