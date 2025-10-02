@@ -36,7 +36,7 @@ public class MainMenuRoutines : MonoBehaviour
         yield return new WaitForSeconds(startButtonTimer);
         enterGameButton.SetActive(true);
     }
-    System.Collections.IEnumerator LoadingScreen()
+    System.Collections.IEnumerator LoadingScreen(string stage)
     {
         // set other screen inactive
         gameNameScreen.SetActive(false);
@@ -50,6 +50,15 @@ public class MainMenuRoutines : MonoBehaviour
       
         yield return new WaitForSeconds(ScreenLength);
         loadingscreen.SetActive(false);
+        if(stage == "START")
+        {
+            MainMenuClick();
+        }
+        else if(stage == "STAGE_ONE")
+        {
+            // load level one.
+        }
+
     }
 
     // button clicks
@@ -59,8 +68,7 @@ public class MainMenuRoutines : MonoBehaviour
     }
     public void EnterGameClick()
     {
-        StartCoroutine(LoadingScreen());
-        MainMenuClick();
+        StartCoroutine(LoadingScreen("START"));    
     } 
     public void MainMenuClick()
     {
