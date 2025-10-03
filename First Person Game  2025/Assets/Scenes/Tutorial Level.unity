@@ -1567,6 +1567,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 703182079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &273222904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7539515590578610280, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 1333176673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &280078446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5518665935514793798, guid: 7db00708d2a8c094688570beacccc200, type: 3}
@@ -4255,6 +4266,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc96050cc5871642a2bfd8273ddc31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &624030708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2538621217345724684, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 1333176673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &625844798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8650007045169502376, guid: e13889dbfc832c34fb71470c9e4cae16, type: 3}
@@ -5075,6 +5091,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376525831466465666, guid: fc77316230a05bb448c85ad51ceea77c, type: 3}
   m_PrefabInstance: {fileID: 44428907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &716745491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5089948090717702996, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 1333176673}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &730626958
 GameObject:
@@ -7368,6 +7389,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93e52c613556dd43bd660a8a12807a5, type: 3}
+--- !u!1 &987257187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3683027782824868980, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 1333176673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &991364106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14848,6 +14874,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1881153633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6994774648119257712, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 1333176673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888679550
 GameObject:
   m_ObjectHideFlags: 0
@@ -15819,6 +15850,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020771788}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2026241254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026241256}
+  - component: {fileID: 2026241255}
+  m_Layer: 0
+  m_Name: Main Menu UI Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2026241255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026241254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28085b7a7280254bbb2bf89b92a0bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameNameScreen: {fileID: 1881153633}
+  enterGameButton: {fileID: 624030708}
+  startButtonTimer: 3
+  isLoading: 1
+  loadingscreen: {fileID: 716745491}
+  maxLoadTime: 5
+  tipsTMPro: {fileID: 273222904}
+  tipsList:
+  - DO NOT! I REPEAT. DON NOT FLL IN THE WATER!
+  - IF IT'S SPIKY. DONT TOUCH IT. YOU WILL DIE!
+  - '"HAVING FUN IS MORE INPORTANT THAN WINNING" IS WHAT LOSERS SAY WHEN THEY CAN''T
+    GET FAIL. YOU''RE NOT A LOSER. YOU''RE A WINNER! SO WIN!'
+  generatingPrompt: {fileID: 0}
+  generatingText: {fileID: 0}
+  generatingTime: 2
+  MainMenuScreen: {fileID: 987257187}
+  isMainMenu: 0
+  selectLevel: {fileID: 0}
+  controls: {fileID: 0}
+  playerStats: {fileID: 0}
+  quitScreen: {fileID: 0}
+--- !u!4 &2026241256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026241254}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.857152, y: 10.002899, z: 121.020004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2064626106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16932,6 +17028,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 661085915}
     - target: {fileID: 2025677029377620403, guid: 61e434e385cd19d4d9ff5187db37f7dd, type: 3}
+      propertyPath: MainRoutines
+      value: 
+      objectReference: {fileID: 2026241255}
+    - target: {fileID: 2025677029377620403, guid: 61e434e385cd19d4d9ff5187db37f7dd, type: 3}
       propertyPath: fPController
       value: 
       objectReference: {fileID: 1994741175}
@@ -17134,6 +17234,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2026241256}
   - {fileID: 1105493627}
   - {fileID: 1889488079}
   - {fileID: 1512052329540010458}

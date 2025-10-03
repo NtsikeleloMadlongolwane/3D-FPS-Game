@@ -7,15 +7,24 @@ public class SceneControll : MonoBehaviour
     [Header("Player Control")]
     public FPController fPController;
     public TextMeshProUGUI centerText;
-
+    public MainMenuRoutines MainRoutines;
     private void Start()
     {
         fPController.canMove = false;
-        StartCoroutine(LevelCountDown());
+        StartCoroutine(MainRoutines.LoadingScreen(""));
+    }
+    private void Update()
+    {
+        if(MainRoutines.isLoading == false)
+        {
+            MainRoutines.isLoading = true;
+            StartCoroutine(LevelCountDown());
+        }
     }
 
     public IEnumerator LevelCountDown()
     {
+        
         yield return new WaitForSeconds(1f);
         centerText.text = "3";
         yield return new WaitForSeconds(1f);

@@ -119,7 +119,7 @@ public class FPController : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (!canMove) return;
+        //if (!canMove) return;
 
         lookInput = context.ReadValue<Vector2>();
     }
@@ -151,7 +151,7 @@ public class FPController : MonoBehaviour
 
     public void HandleLook()
     {
-        if (!canMove) return;
+        //if (!canMove) return;
 
         float mouseX = lookInput.x * lookSensitivity;
         float mouseY = lookInput.y * lookSensitivity;

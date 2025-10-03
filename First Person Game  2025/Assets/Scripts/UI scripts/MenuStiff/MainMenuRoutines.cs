@@ -11,6 +11,7 @@ public class MainMenuRoutines : MonoBehaviour
     public float startButtonTimer = 10f;
 
     [Header("Loading Screen Settings")]
+    public bool isLoading = true;
     public GameObject loadingscreen;
     public float maxLoadTime = 5f;
     public TMP_Text tipsTMPro;
@@ -23,6 +24,7 @@ public class MainMenuRoutines : MonoBehaviour
 
     [Header("Main Menu Screen")]
     public GameObject MainMenuScreen;
+    public bool isMainMenu = false;
 
     [Header("Button Press Screens")]
     public GameObject selectLevel;
@@ -31,7 +33,10 @@ public class MainMenuRoutines : MonoBehaviour
     public GameObject quitScreen;
     private void Start()
     {
-        GameScreenClick();
+        if (isMainMenu)
+        {
+                GameScreenClick();
+        }
     }
 
     // courituines
@@ -46,7 +51,7 @@ public class MainMenuRoutines : MonoBehaviour
         yield return new WaitForSeconds(startButtonTimer);
         enterGameButton.SetActive(true);
     }
-    System.Collections.IEnumerator LoadingScreen(string sceneName)
+    public System.Collections.IEnumerator LoadingScreen(string sceneName)
     {
             // set other screen inactive
             gameNameScreen.SetActive(false);
@@ -68,6 +73,7 @@ public class MainMenuRoutines : MonoBehaviour
         {
 
         }
+        isLoading = false;
     }
 
     // button clicks
