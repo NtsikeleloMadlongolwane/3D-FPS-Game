@@ -981,7 +981,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuRoutines, Assembly-CSharp
-        m_MethodName: ControlsMain
+        m_MethodName: ReStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1247,7 +1247,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuRoutines, Assembly-CSharp
-        m_MethodName: QuitGamePrompt
+        m_MethodName: Quit2Main
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5436,9 +5436,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenuRoutines, Assembly-CSharp
-        m_MethodName: levelSelect
+      - m_Target: {fileID: 8589302787489614602}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: HandlePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10331,7 +10331,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuRoutines, Assembly-CSharp
-        m_MethodName: ControlsMain
+        m_MethodName: InGameControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

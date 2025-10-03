@@ -1847,10 +1847,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1122882527}
-    - target: {fileID: 712728079051979417, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InGameControls
-      objectReference: {fileID: 0}
     - target: {fileID: 2295508651741306287, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1867,10 +1863,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1122882527}
-    - target: {fileID: 4903818010424254952, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReStart
-      objectReference: {fileID: 0}
     - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -173.93
@@ -1911,26 +1903,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6612045908202983550, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 383374722}
-    - target: {fileID: 6612045908202983550, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandlePause
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612045908202983550, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FPController, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7057461611740704621, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1122882527}
-    - target: {fileID: 7057461611740704621, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit2Main
-      objectReference: {fileID: 0}
     - target: {fileID: 8303581589999615229, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1943,18 +1919,10 @@ PrefabInstance:
       propertyPath: mMR
       value: 
       objectReference: {fileID: 1122882527}
-    - target: {fileID: 8599980548938002114, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8916998003618687768, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 542145336}
-    - target: {fileID: 9107685628574565172, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
