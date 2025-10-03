@@ -11,6 +11,7 @@ public class FPController : MonoBehaviour
     public float jumpHeight = 1.5f;
 
     [Header("Look Settings")]
+    public bool canLook = true;
     public Transform cameraTransform;
     public float lookSensitivity = 2f;
     public float verticalLookLimit = 90f;
@@ -62,7 +63,7 @@ public class FPController : MonoBehaviour
 
     [Header("Quit and Restart")]
     public SceneManageemment sM;
-
+    public MainMenuRoutines mMR;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -70,6 +71,8 @@ public class FPController : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
+    [Header("Pause Settings")]
+    public bool isPaused = false;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -119,7 +122,7 @@ public class FPController : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        //if (!canMove) return;
+        if (!canLook) return;
 
         lookInput = context.ReadValue<Vector2>();
     }
@@ -364,6 +367,42 @@ public class FPController : MonoBehaviour
         {
             isDashing = false;
         }
+    }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        HandlePause();      
+    }
+
+    public void HandlePause()
+    {
+        if (isPaused == false)
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+
+            canMove = false;
+            canLook = false;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            mMR.PauseMenu();
+        }
+        else
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+
+            canMove = true;
+            canLook = true;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+
+            mMR.PauseMenu();
+        }
+
     }
 
 }

@@ -78,7 +78,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Quit",
+                    "name": "PauseGame",
                     "type": "Button",
                     "id": "987b9c4c-73af-4fad-bd91-89c173d11b6d",
                     "expectedControlType": "",
@@ -377,7 +377,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard and Mouse",
-                    "action": "Quit",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

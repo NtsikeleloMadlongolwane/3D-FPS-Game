@@ -26,11 +26,19 @@ public class MainMenuRoutines : MonoBehaviour
     public GameObject MainMenuScreen;
     public bool isMainMenu = false;
 
-    [Header("Button Press Screens")]
+    [Header("Main Menu Button Press Screens")]
     public GameObject selectLevel;
     public GameObject controls;
     public GameObject playerStats;
     public GameObject quitScreen;
+
+    [Header("In-Game Menus")]
+    public FPController fPController;
+    public GameObject HUD;
+    public GameObject pauseMenu;
+    public GameObject inGameControls;
+    public GameObject restartPrompt;
+    public GameObject onGameQuit;
     private void Start()
     {
         if (isMainMenu)
@@ -38,7 +46,6 @@ public class MainMenuRoutines : MonoBehaviour
                 GameScreenClick();
         }
     }
-
     // courituines
     System.Collections.IEnumerator GameName()
     {
@@ -131,11 +138,59 @@ public class MainMenuRoutines : MonoBehaviour
     System.Collections.IEnumerator Generating(string levelName)
     {
         generatingPrompt.SetActive(true);
-        generatingText.text = "GENERATING...";
+
+        if (isMainMenu)
+        {
+            generatingText.text = "GENERATING LEVEL";
+        }
+        else
+        {
+            generatingText.text = "REGENERATING LEVEL";
+        }
         yield return new WaitForSeconds(generatingTime);
         generatingText.text = "LEVEL READY";
         yield return new WaitForSeconds(1F);
 
         SceneManager.LoadScene(levelName);
     }
+    
+    // in game menus
+
+    public void PauseMenu()
+    {
+        if(fPController.isPaused == true)
+        {
+            pauseMenu.SetActive(true);
+            HUD.SetActive(false);
+
+            inGameControls.SetActive(false);
+            onGameQuit.SetActive(false);
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            HUD.SetActive(true);
+        }
+    }
+
+    public void InGameControls()
+    {
+        inGameControls.SetActive(true);
+        onGameQuit.SetActive(false);
+        restartPrompt.SetActive(false);
+    }
+    public void ReStart()
+    {
+        inGameControls.SetActive(false);
+        onGameQuit.SetActive(false);
+        restartPrompt.SetActive(true);
+    }
+
+    public void Quit2Main()
+    {
+        inGameControls.SetActive(false);
+        onGameQuit.SetActive(true);
+        restartPrompt.SetActive(false);
+    }
 }
+

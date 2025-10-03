@@ -164,7 +164,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Quit"",
+                    ""name"": ""PauseGame"",
                     ""type"": ""Button"",
                     ""id"": ""987b9c4c-73af-4fad-bd91-89c173d11b6d"",
                     ""expectedControlType"": """",
@@ -463,7 +463,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
-                    ""action"": ""Quit"",
+                    ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -543,7 +543,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_SetGunEffect = m_Player.FindAction("SetGunEffect", throwIfNotFound: true);
-        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
+        m_Player_PauseGame = m_Player.FindAction("PauseGame", throwIfNotFound: true);
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
     }
@@ -634,7 +634,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_SetGunEffect;
-    private readonly InputAction m_Player_Quit;
+    private readonly InputAction m_Player_PauseGame;
     private readonly InputAction m_Player_Restart;
     private readonly InputAction m_Player_Dash;
     /// <summary>
@@ -681,9 +681,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @SetGunEffect => m_Wrapper.m_Player_SetGunEffect;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Quit".
+        /// Provides access to the underlying input action "Player/PauseGame".
         /// </summary>
-        public InputAction @Quit => m_Wrapper.m_Player_Quit;
+        public InputAction @PauseGame => m_Wrapper.m_Player_PauseGame;
         /// <summary>
         /// Provides access to the underlying input action "Player/Restart".
         /// </summary>
@@ -742,9 +742,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @SetGunEffect.started += instance.OnSetGunEffect;
             @SetGunEffect.performed += instance.OnSetGunEffect;
             @SetGunEffect.canceled += instance.OnSetGunEffect;
-            @Quit.started += instance.OnQuit;
-            @Quit.performed += instance.OnQuit;
-            @Quit.canceled += instance.OnQuit;
+            @PauseGame.started += instance.OnPauseGame;
+            @PauseGame.performed += instance.OnPauseGame;
+            @PauseGame.canceled += instance.OnPauseGame;
             @Restart.started += instance.OnRestart;
             @Restart.performed += instance.OnRestart;
             @Restart.canceled += instance.OnRestart;
@@ -786,9 +786,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @SetGunEffect.started -= instance.OnSetGunEffect;
             @SetGunEffect.performed -= instance.OnSetGunEffect;
             @SetGunEffect.canceled -= instance.OnSetGunEffect;
-            @Quit.started -= instance.OnQuit;
-            @Quit.performed -= instance.OnQuit;
-            @Quit.canceled -= instance.OnQuit;
+            @PauseGame.started -= instance.OnPauseGame;
+            @PauseGame.performed -= instance.OnPauseGame;
+            @PauseGame.canceled -= instance.OnPauseGame;
             @Restart.started -= instance.OnRestart;
             @Restart.performed -= instance.OnRestart;
             @Restart.canceled -= instance.OnRestart;
@@ -918,12 +918,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSetGunEffect(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Quit" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "PauseGame" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnQuit(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
