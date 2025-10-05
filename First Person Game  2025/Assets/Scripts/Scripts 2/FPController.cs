@@ -43,6 +43,10 @@ public class FPController : MonoBehaviour
     public Vector3 savedPosition;
     public Transform playerLocation;
 
+    public Transform laserPoint;
+    public GameObject pinkBullet;
+    public float laserSpeed;
+
     [Header("Double Jump")]
     public bool canDoubleJump = false;
     public int maxJumpCount = 2;
@@ -201,10 +205,12 @@ public class FPController : MonoBehaviour
             Destroy(bullet, 3f);
         } // shooting
 
-        if (canSwich)
+       /* if (canSwich)
         {
             TogoClap();
-        } // todo gun
+        } */
+       
+        // todo gun
 
         if(heldObject != null && heldObject.CompareTag("Switch"))
         {
@@ -296,32 +302,31 @@ public class FPController : MonoBehaviour
 
     public void SetGunEffect(InputAction.CallbackContext context)
     {
-        if (canSwich)
-        {
+        if (!canSwich) return;
             Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, 500f))
+        if (Physics.Raycast(ray, out RaycastHit hit, 500f))
+        {
+            if (hit.collider.CompareTag("Switch"))
             {
-                if (hit.collider.CompareTag("Switch"))
+                if (markedObject != null)
                 {
-                    if(markedObject!= null)
-                    {
-                        Marking ummark = markedObject.GetComponent<Marking>();
-                        ummark.Unmarked();
-                    }
-
-                    markedObject = hit.collider.gameObject;
-                    savedPosition = hit.transform.position;
-                    Debug.Log("Switch Location is now: " + savedPosition);
-
-                    Marking mark = hit.collider.GetComponent<Marking>();
-                    mark.Marked();
+                    Marking ummark = markedObject.GetComponent<Marking>();
+                    ummark.Unmarked();
                 }
+
+                markedObject = hit.collider.gameObject;
+                savedPosition = hit.transform.position;
+                //Debug.Log("Switch Location is now: " + savedPosition);
+
+                Marking mark = hit.collider.GetComponent<Marking>();
+                mark.Marked();
             }
         }
     }
-    public void TogoClap()
+    public void TogoClap(InputAction.CallbackContext context)
     {
+        if (!canSwich) return;
         if (!canMove) return;
         if (savedPosition == null) return;
 
@@ -371,6 +376,7 @@ public class FPController : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
+        if (!canMove) return;
         HandlePause();      
     }
 

@@ -110,6 +110,10 @@ public class MainMenuRoutines : MonoBehaviour
             {
                 StartCoroutine(Generating("Tutorial Level"));
             }
+            public void Level_One()
+            {
+                StartCoroutine(Generating("Level 1"));
+            }
     public void ControlsMain()
     {
         controls.SetActive(true);

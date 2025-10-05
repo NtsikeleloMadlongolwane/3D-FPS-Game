@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8927704132470218085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6625272978918656441}
+  - component: {fileID: 5142822047981634396}
+  m_Layer: 0
+  m_Name: Main Menu UI Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6625272978918656441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927704132470218085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.857152, y: 10.002899, z: 121.020004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5142822047981634396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927704132470218085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28085b7a7280254bbb2bf89b92a0bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameNameScreen: {fileID: 0}
+  enterGameButton: {fileID: 0}
+  startButtonTimer: 3
+  isLoading: 1
+  loadingscreen: {fileID: 0}
+  maxLoadTime: 5
+  tipsTMPro: {fileID: 0}
+  tipsList:
+  - DO NOT! I REPEAT. DON NOT FLL IN THE WATER!
+  - IF IT'S SPIKY. DONT TOUCH IT. YOU WILL DIE!
+  - '"HAVING FUN IS MORE INPORTANT THAN WINNING" IS WHAT LOSERS SAY WHEN THEY CAN''T
+    GET FAIL. YOU''RE NOT A LOSER. YOU''RE A WINNER! SO WIN!'
+  generatingPrompt: {fileID: 0}
+  generatingText: {fileID: 0}
+  generatingTime: 2
+  MainMenuScreen: {fileID: 0}
+  isMainMenu: 0
+  selectLevel: {fileID: 0}
+  controls: {fileID: 0}
+  playerStats: {fileID: 0}
+  quitScreen: {fileID: 0}
+  fPController: {fileID: 0}
+  HUD: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  inGameControls: {fileID: 0}
+  restartPrompt: {fileID: 0}
+  onGameQuit: {fileID: 0}
