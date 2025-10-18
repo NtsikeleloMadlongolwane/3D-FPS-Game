@@ -196,5 +196,20 @@ public class MainMenuRoutines : MonoBehaviour
         onGameQuit.SetActive(true);
         restartPrompt.SetActive(false);
     }
+
+    public void ClearMainMenu()
+    {
+        selectLevel.SetActive(false);
+        controls.SetActive(false);
+        playerStats.SetActive(false);
+        quitScreen.SetActive(false);
+    }
+
+    public void ClearPauseMenu()
+    {
+        inGameControls.SetActive(false);
+        restartPrompt.SetActive(false);
+        onGameQuit.SetActive(false);
+    }
 }
 

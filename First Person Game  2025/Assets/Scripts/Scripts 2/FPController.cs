@@ -57,6 +57,8 @@ public class FPController : MonoBehaviour
     public float dashDuration = 0.2f;
     public float dashCooldown = 2f;
     public TextMeshProUGUI cooldownText;
+    public GameObject dashReady;
+    public GameObject dashNotReady;
 
     private bool isDashing = false;
     private float dashTime;
@@ -108,12 +110,16 @@ public class FPController : MonoBehaviour
         // dash cooldown
         if (cooldownTimer > 0)
         {
+            dashReady.SetActive(false);
+            dashNotReady.SetActive(true);
             cooldownTimer -= Time.deltaTime;
-            cooldownText.text = $"Dash: {cooldownTimer:F1}s"; 
+            cooldownText.text = $"{cooldownTimer:F1}s"; 
         }
         else
         {
-            cooldownText.text = "Dash: Ready";
+            cooldownText.text = "";
+            dashReady.SetActive(true);
+            dashNotReady.SetActive(false);
         }
 
 

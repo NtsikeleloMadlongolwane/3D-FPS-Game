@@ -1859,10 +1859,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 542145336}
-    - target: {fileID: 3521307964318001280, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_Name
-      value: LaserPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 4903818010424254952, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1907,47 +1903,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
-      value: 486857ea-cc46-4f07-b344-894c55f8b5de
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
-      value: 'Player/Teleport[/Keyboard/t]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 5564250695428025486, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 383374722}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogoClap
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FPController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005505634713078261, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7057461611740704621, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+      objectReference: {fileID: 1122882527}
+    - target: {fileID: 7091020776664142763, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1122882527}
+    - target: {fileID: 7189779267267743726, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1122882527}
@@ -1964,30 +1928,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1122882527}
     - target: {fileID: 8589302787489614602, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: canSwich
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589302787489614602, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: laserPoint
-      value: 
-      objectReference: {fileID: 300327920}
-    - target: {fileID: 8589302787489614602, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: laserSpeed
-      value: 4000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589302787489614602, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: pinkBullet
       value: 
       objectReference: {fileID: 174112380110932443}
-    - target: {fileID: 8589302787489614602, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-      propertyPath: PinklaserEffect
-      value: 
-      objectReference: {fileID: 709943238804943529, guid: eecf553a166242c4f9d1b5f350949db5, type: 3}
     - target: {fileID: 8916998003618687768, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 542145336}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2377809369530041179, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2231,6 +2180,11 @@ BoxCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376525831466465666, guid: fc77316230a05bb448c85ad51ceea77c, type: 3}
   m_PrefabInstance: {fileID: 1160468608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &147794421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5271816220682473723, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 121498614}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &153786011
 Mesh:
@@ -4068,11 +4022,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3672601510595773111, guid: 9c5d653c58e5c2b49a9a3c93fd09c5ac, type: 3}
   m_PrefabInstance: {fileID: 923359596}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &255502031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5520379287615982145, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-  m_PrefabInstance: {fileID: 121498614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &268446301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4584,11 +4533,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &300327920 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1664345932849116802, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-  m_PrefabInstance: {fileID: 121498614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &309887122
 Mesh:
   m_ObjectHideFlags: 0
@@ -7427,11 +7371,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b94cf7c08161e4d856a64f822e71da, type: 3}
---- !u!1 &429483680 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1573170951548175550, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
-  m_PrefabInstance: {fileID: 121498614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &432409377
 Mesh:
   m_ObjectHideFlags: 0
@@ -9454,6 +9393,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4e7fe6628452e449458d073b335ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &547016155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2801416390641685797, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+  m_PrefabInstance: {fileID: 121498614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &555429612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8330161776289793243, guid: ae50555522f2ae14683bac5213b7606e, type: 3}
@@ -46181,7 +46125,7 @@ PrefabInstance:
     - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
       propertyPath: onGameQuit
       value: 
-      objectReference: {fileID: 429483680}
+      objectReference: {fileID: 547016155}
     - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
       propertyPath: fPController
       value: 
@@ -46193,7 +46137,7 @@ PrefabInstance:
     - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
       propertyPath: restartPrompt
       value: 
-      objectReference: {fileID: 255502031}
+      objectReference: {fileID: 147794421}
     - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
       propertyPath: MainMenuScreen
       value: 
@@ -46218,6 +46162,26 @@ PrefabInstance:
       propertyPath: generatingPrompt
       value: 
       objectReference: {fileID: 1972942721}
+    - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: tipsList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: 'tipsList.Array.data[0]'
+      value: DID I MENTION THAT YOU SHOULDN'T FALL INTO THE WATER?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: 'tipsList.Array.data[1]'
+      value: DON'T TOUCH SPIKY THINGS DAWG. IT'LL HURT. A LOT.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: 'tipsList.Array.data[2]'
+      value: PLEASE DON'T BREAK THE GAME. WE'RE NOT THE GREATEST PROGRAMMERS.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: 'tipsList.Array.data[3]'
+      value: LOADING GAMEPLAY TIPS...JUST WAIT A MOMENT
+      objectReference: {fileID: 0}
     - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.857152
