@@ -949,8 +949,8 @@ MonoBehaviour:
   generatingText: {fileID: 2063351310}
   generatingTime: 2
   MainMenuScreen: {fileID: 1298498713}
-  isMainMenu: 1
-  mainMenu2: 0
+  isMainMenu: 0
+  mainMenu2: 1
   selectLevel: {fileID: 712319384}
   controls: {fileID: 1490879607}
   playerStats: {fileID: 1157185011}
@@ -5497,7 +5497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1298498714
 RectTransform:
   m_ObjectHideFlags: 0

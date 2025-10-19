@@ -2300,6 +2300,114 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &379083619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5142822047981634396, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.857152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.002899
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 121.020004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625272978918656441, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927704132470218085, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      propertyPath: m_Name
+      value: Main Menu UI Controller (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8927704132470218085, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 379083621}
+  m_SourcePrefab: {fileID: 100100000, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+--- !u!1 &379083620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8927704132470218085, guid: 071ed4b8cf227f64b9fba9afef508dce, type: 3}
+  m_PrefabInstance: {fileID: 379083619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379083621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379083620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28085b7a7280254bbb2bf89b92a0bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameNameScreen: {fileID: 1881153633}
+  enterGameButton: {fileID: 624030708}
+  startButtonTimer: 3
+  isLoading: 1
+  loadingscreen: {fileID: 716745491}
+  maxLoadTime: 5
+  tipsTMPro: {fileID: 273222904}
+  tipsList:
+  - DO NOT! I REPEAT. DON NOT FLL IN THE WATER!
+  - IF IT'S SPIKY. DONT TOUCH IT. YOU WILL DIE!
+  - '"HAVING FUN IS MORE INPORTANT THAN WINNING" IS WHAT LOSERS SAY WHEN THEY CAN''T
+    GET FAIL. YOU''RE NOT A LOSER. YOU''RE A WINNER! SO WIN!'
+  generatingPrompt: {fileID: 0}
+  generatingText: {fileID: 0}
+  generatingTime: 2
+  MainMenuScreen: {fileID: 987257187}
+  isMainMenu: 0
+  selectLevel: {fileID: 0}
+  controls: {fileID: 0}
+  playerStats: {fileID: 0}
+  quitScreen: {fileID: 0}
+  fPController: {fileID: 0}
+  HUD: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  inGameControls: {fileID: 0}
+  restartPrompt: {fileID: 0}
+  onGameQuit: {fileID: 0}
 --- !u!1 &384396399
 GameObject:
   m_ObjectHideFlags: 0
@@ -15900,6 +16008,12 @@ MonoBehaviour:
   controls: {fileID: 0}
   playerStats: {fileID: 0}
   quitScreen: {fileID: 0}
+  fPController: {fileID: 0}
+  HUD: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  inGameControls: {fileID: 0}
+  restartPrompt: {fileID: 0}
+  onGameQuit: {fileID: 0}
 --- !u!4 &2026241256
 Transform:
   m_ObjectHideFlags: 0
@@ -17234,10 +17348,11 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 379083619}
+  - {fileID: 1512052329540010458}
   - {fileID: 2026241256}
   - {fileID: 1105493627}
   - {fileID: 1889488079}
-  - {fileID: 1512052329540010458}
   - {fileID: 486539367}
   - {fileID: 1314219446}
   - {fileID: 690598729}
