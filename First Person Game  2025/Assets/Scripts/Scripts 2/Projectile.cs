@@ -9,6 +9,5 @@ public class Projectile : MonoBehaviour
             Rigidbody rb = this.GetComponent<Rigidbody>();
             rb.isKinematic = true;
         }
-     
     }
 }

@@ -11,6 +11,7 @@ public class FPController : MonoBehaviour
     public float jumpHeight = 1.5f;
 
     [Header("Look Settings")]
+    public bool canLook = true;
     public Transform cameraTransform;
     public float lookSensitivity = 2f;
     public float verticalLookLimit = 90f;
@@ -42,6 +43,10 @@ public class FPController : MonoBehaviour
     public Vector3 savedPosition;
     public Transform playerLocation;
 
+    public Transform laserPoint;
+    public GameObject pinkBullet;
+    public float laserSpeed;
+
     [Header("Double Jump")]
     public bool canDoubleJump = false;
     public int maxJumpCount = 2;
@@ -52,6 +57,8 @@ public class FPController : MonoBehaviour
     public float dashDuration = 0.2f;
     public float dashCooldown = 2f;
     public TextMeshProUGUI cooldownText;
+    public GameObject dashReady;
+    public GameObject dashNotReady;
 
     private bool isDashing = false;
     private float dashTime;
@@ -62,7 +69,7 @@ public class FPController : MonoBehaviour
 
     [Header("Quit and Restart")]
     public SceneManageemment sM;
-
+    public MainMenuRoutines mMR;
 
     private CharacterController controller;
     private Vector2 moveInput;
@@ -70,6 +77,8 @@ public class FPController : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
+    [Header("Pause Settings")]
+    public bool isPaused = false;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -101,12 +110,16 @@ public class FPController : MonoBehaviour
         // dash cooldown
         if (cooldownTimer > 0)
         {
+            dashReady.SetActive(false);
+            dashNotReady.SetActive(true);
             cooldownTimer -= Time.deltaTime;
-            cooldownText.text = $"Dash: {cooldownTimer:F1}s"; 
+            cooldownText.text = $"{cooldownTimer:F1}s"; 
         }
         else
         {
-            cooldownText.text = "Dash: Ready";
+            cooldownText.text = "";
+            dashReady.SetActive(true);
+            dashNotReady.SetActive(false);
         }
 
 
@@ -119,7 +132,7 @@ public class FPController : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (!canMove) return;
+        if (!canLook) return;
 
         lookInput = context.ReadValue<Vector2>();
     }
@@ -151,7 +164,7 @@ public class FPController : MonoBehaviour
 
     public void HandleLook()
     {
-        if (!canMove) return;
+        //if (!canMove) return;
 
         float mouseX = lookInput.x * lookSensitivity;
         float mouseY = lookInput.y * lookSensitivity;
@@ -198,10 +211,12 @@ public class FPController : MonoBehaviour
             Destroy(bullet, 3f);
         } // shooting
 
-        if (canSwich)
+       if (canSwich)
         {
             TogoClap();
-        } // todo gun
+        }
+       
+        // todo gun
 
         if(heldObject != null && heldObject.CompareTag("Switch"))
         {
@@ -293,32 +308,31 @@ public class FPController : MonoBehaviour
 
     public void SetGunEffect(InputAction.CallbackContext context)
     {
-        if (canSwich)
-        {
+        if (!canSwich) return;
             Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, 500f))
+        if (Physics.Raycast(ray, out RaycastHit hit, 500f))
+        {
+            if (hit.collider.CompareTag("Switch"))
             {
-                if (hit.collider.CompareTag("Switch"))
+                if (markedObject != null)
                 {
-                    if(markedObject!= null)
-                    {
-                        Marking ummark = markedObject.GetComponent<Marking>();
-                        ummark.Unmarked();
-                    }
-
-                    markedObject = hit.collider.gameObject;
-                    savedPosition = hit.transform.position;
-                    Debug.Log("Switch Location is now: " + savedPosition);
-
-                    Marking mark = hit.collider.GetComponent<Marking>();
-                    mark.Marked();
+                    Marking ummark = markedObject.GetComponent<Marking>();
+                    ummark.Unmarked();
                 }
+
+                markedObject = hit.collider.gameObject;
+                savedPosition = hit.transform.position;
+                //Debug.Log("Switch Location is now: " + savedPosition);
+
+                Marking mark = hit.collider.GetComponent<Marking>();
+                mark.Marked();
             }
         }
     }
     public void TogoClap()
     {
+        if (!canSwich) return;
         if (!canMove) return;
         if (savedPosition == null) return;
 
@@ -354,6 +368,7 @@ public class FPController : MonoBehaviour
     }
     public void Dash()
     {
+        if (!canMove) return;
         if (dashTime > 0)
         {
             Vector3 dashDirection = transform.forward;
@@ -364,6 +379,45 @@ public class FPController : MonoBehaviour
         {
             isDashing = false;
         }
+    }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+       // if (!canMove) return;
+        HandlePause();      
+    }
+
+    public void HandlePause()
+    {
+        if (isPaused == false)
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+
+            canMove = false;
+            canLook = false;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            mMR.PauseMenu();
+            mMR.ClearPauseMenu();
+        }
+        else
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+
+            canMove = true;
+            canLook = true;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+
+            mMR.PauseMenu();
+            mMR.ClearPauseMenu();
+        }
+
     }
 
 }
