@@ -25,6 +25,7 @@ public class MainMenuRoutines : MonoBehaviour
     [Header("Main Menu Screen")]
     public GameObject MainMenuScreen;
     public bool isMainMenu = false;
+    public bool mainMenu2 = false;
 
     [Header("Main Menu Button Press Screens")]
     public GameObject selectLevel;
@@ -43,11 +44,19 @@ public class MainMenuRoutines : MonoBehaviour
     {
         if (isMainMenu)
         {
-                GameScreenClick();
+            GameScreenClick();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        if (mainMenu2)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            StartCoroutine(LoadingScreen("MainMenu2"));
         }
     }
     // courituines
-    System.Collections.IEnumerator GameName()
+    public IEnumerator GameName()
     {
         // set other screen inactive
         loadingscreen.SetActive(false);
@@ -58,7 +67,7 @@ public class MainMenuRoutines : MonoBehaviour
         yield return new WaitForSeconds(startButtonTimer);
         enterGameButton.SetActive(true);
     }
-    public System.Collections.IEnumerator LoadingScreen(string sceneName)
+    public IEnumerator LoadingScreen(string sceneName)
     {
             // set other screen inactive
             gameNameScreen.SetActive(false);
@@ -111,8 +120,27 @@ public class MainMenuRoutines : MonoBehaviour
                 StartCoroutine(Generating("Tutorial Level"));
             }
             public void Level_One()
-            {
+            {   
+                if (isMainMenu || mainMenu2 || fPController.isPaused)
+                {
+                if (fPController != null)
+                    {
+                        fPController.HandlePause();
+                    }                     
+                }
+
                 StartCoroutine(Generating("Level 1"));
+            }
+            public void GoToMainMenu()
+            {
+                    if (isMainMenu || mainMenu2 || fPController.isPaused)
+                    {
+                        if (fPController != null)
+                        {
+                            fPController.HandlePause();
+                        }
+                    }
+                 StartCoroutine(Generating("MainMenu 1"));
             }
     public void ControlsMain()
     {
@@ -139,7 +167,7 @@ public class MainMenuRoutines : MonoBehaviour
         playerStats.SetActive(false);
     }
 
-    System.Collections.IEnumerator Generating(string levelName)
+    IEnumerator Generating(string levelName)
     {
         generatingPrompt.SetActive(true);
 
@@ -149,7 +177,7 @@ public class MainMenuRoutines : MonoBehaviour
         }
         else
         {
-            generatingText.text = "REGENERATING LEVEL";
+            generatingText.text = "GENERATING LEVEL";
         }
         yield return new WaitForSeconds(generatingTime);
         generatingText.text = "LEVEL READY";
