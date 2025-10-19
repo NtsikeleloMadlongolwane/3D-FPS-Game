@@ -211,10 +211,10 @@ public class FPController : MonoBehaviour
             Destroy(bullet, 3f);
         } // shooting
 
-       /* if (canSwich)
+       if (canSwich)
         {
             TogoClap();
-        } */
+        }
        
         // todo gun
 
@@ -330,7 +330,7 @@ public class FPController : MonoBehaviour
             }
         }
     }
-    public void TogoClap(InputAction.CallbackContext context)
+    public void TogoClap()
     {
         if (!canSwich) return;
         if (!canMove) return;
@@ -368,6 +368,7 @@ public class FPController : MonoBehaviour
     }
     public void Dash()
     {
+        if (!canMove) return;
         if (dashTime > 0)
         {
             Vector3 dashDirection = transform.forward;
@@ -382,7 +383,7 @@ public class FPController : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
-        if (!canMove) return;
+       // if (!canMove) return;
         HandlePause();      
     }
 
@@ -400,6 +401,7 @@ public class FPController : MonoBehaviour
             Cursor.visible = true;
 
             mMR.PauseMenu();
+            mMR.ClearPauseMenu();
         }
         else
         {
@@ -413,6 +415,7 @@ public class FPController : MonoBehaviour
             Cursor.visible = true;
 
             mMR.PauseMenu();
+            mMR.ClearPauseMenu();
         }
 
     }
