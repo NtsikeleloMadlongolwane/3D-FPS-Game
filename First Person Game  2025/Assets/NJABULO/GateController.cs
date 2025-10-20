@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class GateController : MonoBehaviour
 {
-    public Transform gateLeft;      
-    public Transform gateRight;     
-    public float openDistance = 5f; 
-    public float moveSpeed = 2f;   
+    public Transform gateLeft;      // Assign in Inspector
+    public Transform gateRight;     // Assign in Inspector
+    public float openDistance = 5f; // How far each gate slides
+    public float moveSpeed = 2f;    // Movement speed
 
     private Vector3 leftClosedPos;
     private Vector3 rightClosedPos;
@@ -15,11 +15,11 @@ public class GateController : MonoBehaviour
 
     void Start()
     {
-        
+        // Store initial positions
         leftClosedPos = gateLeft.position;
         rightClosedPos = gateRight.position;
 
-      
+        // Calculate open positions using local right direction
         leftOpenPos = leftClosedPos - gateLeft.right * openDistance;
         rightOpenPos = rightClosedPos + gateRight.right * openDistance;
     }
