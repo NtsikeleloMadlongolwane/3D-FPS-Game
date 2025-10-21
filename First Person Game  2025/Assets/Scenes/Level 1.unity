@@ -20,7 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
+<<<<<<< HEAD
   m_AmbientSkyColor: {r: 0.039923523, g: 0.039793495, b: 0.08679241, a: 1}
+=======
+  m_AmbientSkyColor: {r: 0.17725167, g: 0.17725167, b: 0.24528301, a: 1}
+>>>>>>> parent of 3613c24 (Revert "important things")
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -93,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 808888eaf05f1b449815e7531d2175bc, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -4604,6 +4608,7 @@ PrefabInstance:
       objectReference: {fileID: 1122882527}
     - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: -171.2
       objectReference: {fileID: 0}
     - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
@@ -4613,6 +4618,17 @@ PrefabInstance:
     - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.9
+=======
+      value: 115.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 76.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+>>>>>>> parent of 3613c24 (Revert "important things")
       objectReference: {fileID: 0}
     - target: {fileID: 5370646840990635006, guid: 60a75f120d2947240b8b54dbd80645bf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17970,6 +17986,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.021790035, y: 0.019999998, z: 0.26185495}
   m_Center: {x: 0.000068717636, y: 0, z: 0.12092748}
+<<<<<<< HEAD
 --- !u!1 &511574472
 GameObject:
   m_ObjectHideFlags: 0
@@ -18078,6 +18095,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511574472}
   m_Mesh: {fileID: 8314571269056883277, guid: 47aade0276b74cb4fa50f7d7a7930c65, type: 3}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1 &513515471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8675660419491173655, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
@@ -18104,6 +18123,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011424122, y: 0.020063644, z: 0.00014000066}
   m_Center: {x: 0.0000055145942, y: 0.000000007450813, z: -0.000025007455}
+<<<<<<< HEAD
 --- !u!1 &515994450
 GameObject:
   m_ObjectHideFlags: 0
@@ -18702,6 +18722,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1 &516945411
 GameObject:
   m_ObjectHideFlags: 0
@@ -26024,6 +26046,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2397630290738173188, guid: d4684136a2a388845b154acd06c2f7c9, type: 3}
   m_PrefabInstance: {fileID: 1046461389}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!43 &805132689
 Mesh:
   m_ObjectHideFlags: 0
@@ -26189,6 +26212,8 @@ Mesh:
     offset: 0
     size: 0
     path: 
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1 &807919149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6666660977082890997, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
@@ -34618,6 +34643,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa87d2fcb3e1b1e40896181a59b54ca1, type: 3}
+<<<<<<< HEAD
 --- !u!43 &921826805
 Mesh:
   m_ObjectHideFlags: 0
@@ -34783,6 +34809,8 @@ Mesh:
     offset: 0
     size: 0
     path: 
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1 &921898199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2045257923548263128, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
@@ -34810,6 +34838,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2477511411847689622, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
+<<<<<<< HEAD
 --- !u!1 &922301561
 GameObject:
   m_ObjectHideFlags: 0
@@ -34918,6 +34947,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922301561}
   m_Mesh: {fileID: -8663802791670341782, guid: 47aade0276b74cb4fa50f7d7a7930c65, type: 3}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1001 &923359596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48070,6 +48101,7 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+<<<<<<< HEAD
 --- !u!43 &1229876987
 Mesh:
   m_ObjectHideFlags: 0
@@ -48235,6 +48267,8 @@ Mesh:
     offset: 0
     size: 0
     path: 
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1001 &1234166303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48295,6 +48329,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.215
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: -5368553391471518159, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -48311,12 +48346,15 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 076627303576f784197a9fa20299470b, type: 2}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
     - target: {fileID: 919132149155446097, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
       propertyPath: m_Name
       value: 1st part
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
+<<<<<<< HEAD
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
       insertIndex: -1
@@ -48330,6 +48368,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 415633751}
+=======
+    m_AddedGameObjects: []
+>>>>>>> parent of 3613c24 (Revert "important things")
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -7146521406498821007, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
       insertIndex: -1
@@ -49048,6 +49089,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2094713822}
   m_SourcePrefab: {fileID: 100100000, guid: c258ea8a9644f6345a8c68c7707172a4, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1261997998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3756473180518285571, guid: 47aade0276b74cb4fa50f7d7a7930c65, type: 3}
@@ -49290,6 +49332,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277002354}
   m_Mesh: {fileID: 8314571269056883277, guid: 47aade0276b74cb4fa50f7d7a7930c65, type: 3}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1 &1286969052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2181743766629440291, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
@@ -54831,6 +54875,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.012636401, y: 0.020000005, z: 0.000040000712}
   m_Center: {x: -2.748354e-12, y: 0.00000002188736, z: -0.00008581684}
+<<<<<<< HEAD
 --- !u!1 &1462838886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3273140236924913515, guid: e71a2290fd6272a4da6526e061526e1a, type: 3}
@@ -54971,6 +55016,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463006222}
   m_Mesh: {fileID: -8663802791670341782, guid: 47aade0276b74cb4fa50f7d7a7930c65, type: 3}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!1 &1463557829
 GameObject:
   m_ObjectHideFlags: 0
@@ -59112,6 +59159,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2228417370725966487, guid: e509881d64d5d72428701a0f33a1e1c0, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1577355050
 GameObject:
   m_ObjectHideFlags: 0
@@ -59220,6 +59268,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577355050}
   m_Mesh: {fileID: -8663802791670341782, guid: 47aade0276b74cb4fa50f7d7a7930c65, type: 3}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!43 &1578592749
 Mesh:
   m_ObjectHideFlags: 0
@@ -60741,7 +60791,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
+<<<<<<< HEAD
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> parent of 3613c24 (Revert "important things")
 --- !u!154 &1628454801
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -78511,7 +78565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838751425225748411, guid: b6b302bb003dc444b8a47afefce95ff5, type: 3}
       propertyPath: m_IsActive
+<<<<<<< HEAD
       value: 1
+=======
+      value: 0
+>>>>>>> parent of 3613c24 (Revert "important things")
       objectReference: {fileID: 0}
     - target: {fileID: 1909940353282456633, guid: b6b302bb003dc444b8a47afefce95ff5, type: 3}
       propertyPath: m_Mesh
@@ -84443,6 +84501,10 @@ SceneRoots:
   - {fileID: 199806747}
   - {fileID: 1787214591}
   - {fileID: 274898702}
+<<<<<<< HEAD
+=======
+  - {fileID: 1760449793}
+>>>>>>> parent of 3613c24 (Revert "important things")
   - {fileID: 1094875687}
   - {fileID: 1889330997}
   - {fileID: 2759836169283452928}
@@ -84454,5 +84516,8 @@ SceneRoots:
   - {fileID: 1342690642}
   - {fileID: 1234166303}
   - {fileID: 1628454803}
+<<<<<<< HEAD
   - {fileID: 1954148246}
   - {fileID: 553656408}
+=======
+>>>>>>> parent of 3613c24 (Revert "important things")
