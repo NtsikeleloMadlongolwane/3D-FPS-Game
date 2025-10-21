@@ -3,7 +3,7 @@ using UnityEngine;
 public class MousePision : MonoBehaviour
 {
     [SerializeField]
-    private bool isInDragArea = false;
+   // private bool isInDragArea = false;
     private Vector3 mousePosition;
 
     public Transform topBound;
@@ -21,11 +21,11 @@ public class MousePision : MonoBehaviour
         if ((mousePosition.y < top.y && mousePosition.y > bottom.y) 
             && (mousePosition.x < right.x && mousePosition.x > left.x))
         {
-            isInDragArea = true;
+            //isInDragArea = true;
         }
         else
         {
-            isInDragArea = false;
+            //isInDragArea = false;
         }
     }
 }
