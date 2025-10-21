@@ -12,14 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1.unity
     guid: bf91da9c4cc55434d8632eedea348691
   - enabled: 1
-    path: Assets/Scenes/Tutorial Level.unity
-    guid: bc30178f855ead847b9e10cc20528049
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Ntsikelelo.unity
     guid: 75cf1c8952c25424598a904a3258027d
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Level.unity
+    guid: bc30178f855ead847b9e10cc20528049
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
