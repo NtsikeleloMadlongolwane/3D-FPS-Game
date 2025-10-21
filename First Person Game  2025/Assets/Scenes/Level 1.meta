@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:First Person Game  2025/Assets/Scenes/Level 1.meta
 guid: f5a184697e412d0408ebad015af33b50
+========
+<<<<<<< Updated upstream
+guid: 5663055b7d95d0741805d91f8444301c
+=======
+guid: 85126d975aa81c64294e2fb31196435d
+>>>>>>> Stashed changes
+>>>>>>>> Bugs1:First Person Game  2025/Assets/Sisanda.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
