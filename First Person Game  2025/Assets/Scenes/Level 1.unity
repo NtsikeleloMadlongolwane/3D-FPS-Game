@@ -7501,7 +7501,7 @@ Transform:
   m_GameObject: {fileID: 254047898}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.65, y: -15.19, z: 39.75}
+  m_LocalPosition: {x: 0.65, y: -15.01, z: 38.33}
   m_LocalScale: {x: 14.2, y: 7.0125, z: 4.9471}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7554,7 +7554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f24f6174be0a24cba1b90c6e57ebeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: 
+  targetTag: Boulder
 --- !u!65 &254047902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86895,6 +86895,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 309887122}
+    - target: {fileID: 4774914565643199858, guid: 0db16e9fd01b14f4b9ecbabec5177f56, type: 3}
+      propertyPath: targetTag
+      value: Boulder
+      objectReference: {fileID: 0}
     - target: {fileID: 4811657305653754982, guid: 0db16e9fd01b14f4b9ecbabec5177f56, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -87181,7 +87185,7 @@ PrefabInstance:
       objectReference: {fileID: 476521515}
     - target: {fileID: 9070985848960892328, guid: 0db16e9fd01b14f4b9ecbabec5177f56, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.6
+      value: 45.86
       objectReference: {fileID: 0}
     - target: {fileID: 9192459563958812331, guid: 0db16e9fd01b14f4b9ecbabec5177f56, type: 3}
       propertyPath: m_Mesh
