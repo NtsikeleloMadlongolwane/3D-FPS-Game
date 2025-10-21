@@ -16,6 +16,7 @@ public class PopUpAnimation : MonoBehaviour
         transform.localScale = startingScale;
         animateX = true;
         animateY = false;
+        Debug.Log("Animation stared");
     }
 
     void Update()
@@ -39,6 +40,7 @@ public class PopUpAnimation : MonoBehaviour
             if (Mathf.Approximately(newY, targetScale.y))
             {
                 animateY = false;
+                Debug.Log("Animation done");
             }
         }
     }
