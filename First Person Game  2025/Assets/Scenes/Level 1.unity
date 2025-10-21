@@ -32835,10 +32835,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -2947538861075970057, guid: aa87d2fcb3e1b1e40896181a59b54ca1, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c29ee2448d2e41a419c6ad7955fab87f, type: 2}
     - target: {fileID: 919132149155446097, guid: aa87d2fcb3e1b1e40896181a59b54ca1, type: 3}
       propertyPath: m_Name
       value: Audince seats 1  (5)
