@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: e97fe24123e7467419a91a250c4dbe3b
+guid: 33b2409553c7811499890c3d5ca533e2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Chrome Hand
-    second: {fileID: 2100000, guid: 72238c8c1ee10814ea1fdd8c3b723042, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.008
-    second: {fileID: 2100000, guid: eb3448d019a24384398042d70a96829e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.011
-    second: {fileID: 2100000, guid: 04fad8d4062cf1642ae1f04fb9b4261a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.012
-    second: {fileID: 2100000, guid: bbbcbc582373caa4fa0b495377bbe312, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.013
-    second: {fileID: 2100000, guid: 96f91a5a053a71645a20bc3a68594785, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
