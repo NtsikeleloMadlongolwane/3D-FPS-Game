@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    public string tag;
+    public string targetTag;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(tag))
+        if (other.gameObject.CompareTag(targetTag))
         {
             Destroy(other.gameObject);
+            Debug.Log("Object Destroyed");
         }
     }
 }
