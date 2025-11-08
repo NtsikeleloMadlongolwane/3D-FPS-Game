@@ -32,6 +32,7 @@ public class MainMenuRoutines : MonoBehaviour
     public GameObject controls;
     public GameObject playerStats;
     public GameObject quitScreen;
+    public GameObject RunnerScreen;
 
     [Header("In-Game Menus")]
     public FPController fPController;
@@ -114,6 +115,7 @@ public class MainMenuRoutines : MonoBehaviour
         controls.SetActive(false);
         playerStats.SetActive(false);
         quitScreen.SetActive(false);
+        RunnerScreen.SetActive(false);
     }
             public void Level_Tut()
             {
@@ -149,6 +151,7 @@ public class MainMenuRoutines : MonoBehaviour
         selectLevel.SetActive(false);
         playerStats.SetActive(false);
         quitScreen.SetActive(false);
+        RunnerScreen.SetActive(false);
     }
     public void PlayerStats()
     {
@@ -157,6 +160,7 @@ public class MainMenuRoutines : MonoBehaviour
         selectLevel.SetActive(false);
         controls.SetActive(false);
         quitScreen.SetActive(false);
+        RunnerScreen.SetActive(false);
     }
     public void QuitGamePrompt()
     {
@@ -165,6 +169,17 @@ public class MainMenuRoutines : MonoBehaviour
         selectLevel.SetActive(false);
         controls.SetActive(false);
         playerStats.SetActive(false);
+        RunnerScreen.SetActive(false);
+    }
+
+    public void RunnerSelect()
+    {
+        RunnerScreen.SetActive(true);
+        // set off
+        selectLevel.SetActive(false);
+        controls.SetActive(false);
+        playerStats.SetActive(false);
+        quitScreen.SetActive(false);
     }
 
     IEnumerator Generating(string levelName)
