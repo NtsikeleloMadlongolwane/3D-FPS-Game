@@ -66,6 +66,8 @@ public class FPController : MonoBehaviour
 
     [Header("Respawn")]
     public Vector3 spawnLocation;
+    public AudioSource audioSource;
+    public AudioSource cheerAudioSource;
 
     [Header("Quit and Restart")]
     public SceneManageemment sM;
@@ -82,6 +84,8 @@ public class FPController : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
+        cheerAudioSource = GetComponent<AudioSource>();
        Cursor.lockState = CursorLockMode.Locked;
        Cursor.visible = false;
         originalMoveSpeed = moveSpeed;
@@ -354,6 +358,8 @@ public class FPController : MonoBehaviour
     {
         controller.enabled = false;
         this.transform.position = spawnLocation;
+        audioSource.Play();
+        cheerAudioSource.Play();
         controller.enabled = true;
     }
 

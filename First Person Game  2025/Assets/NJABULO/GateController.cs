@@ -13,6 +13,9 @@ public class GateController : MonoBehaviour
     private Vector3 rightOpenPos;
     private bool isOpen = false;
 
+    public AudioSource audioSource;  
+     
+
     void Start()
     {
         
@@ -26,6 +29,8 @@ public class GateController : MonoBehaviour
 
     void Update()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (isOpen)
         {
             gateLeft.position = Vector3.MoveTowards(gateLeft.position, leftOpenPos, moveSpeed * Time.deltaTime);
@@ -38,6 +43,8 @@ public class GateController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isOpen = true;
+
+            audioSource.Play();
         }
     }
 }
