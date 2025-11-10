@@ -13,6 +13,6 @@ public class VictoryAudio : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
-                audioSource.Play();
+        audioSource.Play();
     }
 }
