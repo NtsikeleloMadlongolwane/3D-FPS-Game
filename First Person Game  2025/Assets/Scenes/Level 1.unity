@@ -9754,6 +9754,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3864683775326091320, guid: e13889dbfc832c34fb71470c9e4cae16, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fe2476901b1851b448d03c144fb8f55c, type: 2}
     - target: {fileID: 8650007045169502376, guid: e13889dbfc832c34fb71470c9e4cae16, type: 3}
       propertyPath: m_Name
       value: SlidingDoor
@@ -82195,6 +82199,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1013697251}
+    - target: {fileID: 6189782760654903286, guid: b6b302bb003dc444b8a47afefce95ff5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fe2476901b1851b448d03c144fb8f55c, type: 2}
     - target: {fileID: 6307433706311710886, guid: b6b302bb003dc444b8a47afefce95ff5, type: 3}
       propertyPath: m_Mesh
       value: 
